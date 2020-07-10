@@ -8,7 +8,6 @@
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 	<!-- STYLES -->
-
 	<style {csp-style-nonce}>
 		* {
 			transition: background-color 300ms ease, color 300ms ease;
@@ -219,7 +218,7 @@
 
 	<div class="heroe">
 
-		<h1>Welcome to CodeIgniter <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
+		<h1>Bienvenido a aplicación librería</h1>
 
 		<h2>The small framework with powerful features</h2>
 
@@ -228,21 +227,36 @@
 </header>
 
 <!-- CONTENT -->
-
 <section>
+	<h1>Enlaces</h1>
 
-	<h1>About this page</h1>
+	<nav>
+		<ul>
+			<li>
+				<a href="<?= base_url( 'autores' ) ?>">Autores</a>
+				<ul>
+					<li>
+						<a href="<?= base_url( 'autores' ) ?>">Listar</a>
+					</li>
+					<li>
+						<a href="<?= base_url( 'autores/agregarEditar' ) ?>">Agregar</a>
+					</li>
+				</ul>
+			</li>
 
-	<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-	<p>If you would like to edit this page you will find it located at:</p>
-
-	<pre><code>app/Views/welcome_message.php</code></pre>
-
-	<p>The corresponding controller for this page can be found at:</p>
-
-	<pre><code>app/Controllers/Home.php</code></pre>
-
+			<li>
+				<a href="<?= base_url( 'libros' ) ?>">Libros</a>
+				<ul>
+					<li>
+						<a href="<?= base_url( 'libros' ) ?>">Listar</a>
+					</li>
+					<li>
+						<a href="<?= base_url( 'libros/agregarEditar' ) ?>">Agregar</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 </section>
 
 <div class="further">
@@ -307,7 +321,6 @@
 </footer>
 
 <!-- SCRIPTS -->
-
 <script>
 	function toggleMenu() {
 		var menuItems = document.getElementsByClassName('menu-item');
@@ -317,8 +330,6 @@
 		}
 	}
 </script>
-
-<!-- -->
 
 </body>
 </html>
