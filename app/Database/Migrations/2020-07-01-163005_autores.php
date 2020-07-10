@@ -2,50 +2,65 @@
 
 use CodeIgniter\Database\Migration;
 
+/**
+ * Clase migración autores
+ */
 class Autores extends Migration
 {
-	public function up()
+	/**
+	 * Corre levantamiento inicial migración
+	 * 
+	 * @return void
+	 */
+	public function up () : void
 	{
+		# Agrega campos
 		$this->forge->addField(
 			[
-				'id'	=> [
-					'type'				=> 'bigint',
-					'constraint'		=> 20,
-					'unsigned'			=> true,
-					'auto_increment'	=> true
+				"id"			=> [
+					"type"				=> "bigint",
+					"constraint"		=> 20,
+					"unsigned"			=> true,
+					"auto_increment"	=> true
 				],
 
-				'nombre'	=> [
-					'type'			=> 'varchar',
-					'constraint'	=> 175,
-					'default'		=> 'Anónimo',
-					'null'			=> false,
+				"nombre"		=> [
+					"type"			=> "varchar",
+					"constraint"	=> 175,
+					"default"		=> "Anónimo",
+					"null"			=> false,
 				],
 
-				'nacionalidad'	=> [
-					'type'			=> 'varchar',
-					'constraint'	=> 75
+				"nacionalidad"	=> [
+					"type"			=> "varchar",
+					"constraint"	=> 75
 				],
 
-				'genero'		=> [
-					'type'		=> "enum( 'M', 'F', 'O' )",
-					'null'		=> false,
-					'default'	=> 'O'
+				"genero"		=> [
+					"type"		=> "enum( 'M', 'F', 'O' )",
+					"null"		=> false,
+					"default"	=> "O"
 				],
 
-				'creado'		=> [ 'type'	=> 'datetime' ],
+				"creado"		=> [ "type"	=> "datetime" ],
 
-				'editado'		=> [ 'type'	=> 'datetime' ],
+				"editado"		=> [ "type"	=> "datetime" ],
 
-				'eliminado'		=> [ 'type'	=> 'datetime' ]
+				"eliminado"		=> [ "type"	=> "datetime" ]
 			]
 		);
-		$this->forge->addPrimaryKey( 'id' );
-		$this->forge->createTable( 't_autores' );
+
+		$this->forge->addPrimaryKey( "id" ); # Establece llave primaria
+		$this->forge->createTable( "t_autores" ); # Crea tabla con datos anteriores
 	}
 
-	public function down ()
+	/**
+	 * Corre la bajada de la migración
+	 * 
+	 * @return void
+	 */
+	public function down () : void
 	{
-		$this->forge->dropTable( 't_autores' );
+		$this->forge->dropTable( "t_autores" );
 	}
 }
