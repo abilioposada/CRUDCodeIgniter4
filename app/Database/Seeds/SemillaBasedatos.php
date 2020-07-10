@@ -2,11 +2,22 @@
 
 use CodeIgniter\DataBase\Seeder;
 
+/**
+ * Clase semilla base de datos
+ */
 class SemillaBasedatos extends Seeder
 {
-	public function run ()
+	/**
+	 * Corre llamadas a semillas
+	 * 
+	 * @return void
+	 */
+	public function run () : void
 	{
+		# Llama semilla autores
 		$this->call( 'SemillaAutores' );
+		
+		# Llama semilla libros
 		$this->call( 'SemillaLibros' );
 	}
 }
