@@ -1,3 +1,20 @@
+```
+git clone https://github.com/abilioposada/CRUDCodeIgniter4.git
+
+cd CRUDCodeIgniter4
+
+composer update
+
+cp env .env
+
+php spark serve
+php spark list
+
+php spark migrate
+
+php db:seed
+```
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
@@ -62,21 +79,3 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 - xml (enabled by default - don't turn it off)
-
-```
-composer create-project codeigniter4/appstarter AppName
-
-code AppName
-
-composer update
-
-cp env .env
-
-php spark serve
-php spark list
-
-php spark migrate:create
-php spark migrate
-
-php db:seed
-```
