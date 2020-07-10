@@ -2,4 +2,7 @@
 
 use CodeIgniter\Entity;
 
+/**
+ * Clase entidad autor
+ */
 class Autor extends Entity {}
