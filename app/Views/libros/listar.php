@@ -16,6 +16,7 @@
 
 	<!-- Tabla -->
 	<table border="1">
+	
 		<!-- Encabezados de tabla -->
 		<thead>
 
