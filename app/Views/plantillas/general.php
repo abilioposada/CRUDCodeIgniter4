@@ -8,15 +8,23 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Aplicación Librería</title>
+		<title>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+			<?= lang( 'App.general.titulo' ) ?>
+
+		</title>
+
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" /> -->
 		
 	</head>
 
 	<body>
 
-		<h1>Aplicación Librería</h1>
+		<h1>
+
+			<?= lang( 'App.general.titulo' ) ?>
+
+		</h1>
 
 		<!-- Menú -->
 		<nav>
@@ -26,19 +34,31 @@
 				<!-- Autores -->
 				<li>
 
-					<a href="<?= base_url( 'autores' ) ?>">Autores</a>
+					<a href="<?= base_url( '/autores' ) ?>">
+
+						<?= lang( 'App.autor.titulo', [ PLURAL ] ) ?>
+
+					</a>
 
 					<ul>
 
 						<li>
 
-							<a href="<?= base_url( 'autores' ) ?>">Listar</a>
+							<a href="<?= base_url( '/autores' ) ?>">
+
+								<?= lang( 'App.general.listado', [ SINGULAR ] ) ?>
+
+							</a>
 						
 						</li>
 
 						<li>
 						
-							<a href="<?= base_url( 'autores/agregarEditar' ) ?>">Agregar</a>
+							<a href="<?= base_url( '/autores/agregarEditar' ) ?>">
+
+								<?= lang( 'App.general.accion.agregar' ) ?>
+
+							</a>
 						
 						</li>
 					
@@ -50,19 +70,31 @@
 				<!-- Libros -->
 				<li>
 
-					<a href="<?= base_url( 'libros' ) ?>">Libros</a>
+					<a href="<?= base_url( '/libros' ) ?>">
+						
+						<?= lang( 'App.libro.nombre', [ PLURAL ] ) ?>
+
+					</a>
 					
 					<ul>
 					
 						<li>
 					
-							<a href="<?= base_url( 'libros' ) ?>">Listar</a>
+							<a href="<?= base_url( '/libros' ) ?>">
+
+								<?= lang( 'App.general.listado', [ SINGULAR ] ) ?>
+
+							</a>
 					
 						</li>
 					
 						<li>
 					
-							<a href="<?= base_url( 'libros/agregarEditar' ) ?>">Agregar</a>
+							<a href="<?= base_url( '/libros/agregarEditar' ) ?>">
+
+								<?= lang( 'App.general.accion.agregar' ) ?>
+
+							</a>
 					
 						</li>
 					
@@ -81,7 +113,7 @@
 		<!-- Pie de página -->
 		<footer>
 
-			<p>Todos los derechos reservados &reg; <?= date( 'Y' ) ?></p>
+			<p><?= lang( 'App.general.derechos' ) ?> &reg; <?= date( 'Y' ) ?></p>
 
 		</footer>
 		<!-- /Pie de página -->

@@ -48,7 +48,7 @@ class Autores extends BaseController
 		$this->modeloAutor->delete( $id );
 
 		# Mensaje temporal entre peticiones
-		$this->session->setFlashData( 'mensaje', 'Eliminación exitosa' );
+		$this->session->setFlashData( 'mensaje', lang( 'App.general.accion.exitosa' ) );
 
 		# Redirección acción inicio controlador
 		return redirect()->to( base_url( '/autores' ) );
@@ -77,7 +77,7 @@ class Autores extends BaseController
 		if ( $this->modeloAutor->save( $this->request->getPost() ) )
 		{
 			# Mensaje temporal entre peticiones
-			$this->session->setFlashData( 'mensaje', 'Guardado exitoso' );
+			$this->session->setFlashData( 'mensaje', lang( 'App.general.accion.exitosa' ) );
 			
 			# Redirección acción inicio controlador
 			return redirect()->to( base_url( '/autores' ) );

@@ -5,14 +5,17 @@
 	<!-- Encabezados -->
 	<header>
 
-		<h2>Libros</h2>
-
-		<h3>Listado</h3>
+		<h2><?= lang( 'App.libro.nombre', [ count( $libros ) ] ) ?></h2>
+		<h3><?= lang( 'App.general.listado', [ count( $libros ) ] ) ?></h3>
 
 	</header>
 	<!-- /Encabezados -->
 
-	<a href="<?= base_url( 'libros/agregarEditar' ) ?>">Agregar</a>
+	<a href="<?= base_url( 'libros/agregarEditar' ) ?>">
+
+		<?= lang( 'App.general.accion.agregar' ) ?>
+		
+	</a>
 
 	<!-- Tabla -->
 	<table border="1">
@@ -22,13 +25,10 @@
 
 			<tr>
 
-				<th>Título</th>
-
-				<th>ISBN</th>
-
-				<th>Autor</th>
-
-				<th>Acciones</th>
+				<th><?= lang( 'App.libro.isbn' ) ?></th>
+				<th><?= lang( 'App.libro.titulo' ) ?></th>
+				<th><?= lang( 'App.autor.titulo', [ SINGULAR ] ) ?></th>
+				<th><?= lang( 'App.general.accion.nombre' ) ?></th>
 				
 			</tr>
 
@@ -43,11 +43,11 @@
 
 				<tr>
 
-					<!-- Título -->
-					<td><?= $libro->titulo ?></td>
-
 					<!-- ISBN -->
 					<td><?= $libro->isbn ?></td>
+
+					<!-- Título -->
+					<td><?= $libro->titulo ?></td>
 
 					<!-- Nombre autor -->
 					<td><?= $libro->autor()->nombre ?></td>
@@ -55,9 +55,17 @@
 					<!-- Acciones -->
 					<td>
 
-						<a href="<?= base_url( 'libros/agregarEditar/' . $libro->id ) ?>">Editar</a>
+						<a href="<?= base_url( '/libros/agregarEditar/' . $libro->id ) ?>">
 
-						<a href="<?= base_url( 'libros/eliminar/' . $libro->id ) ?>" onclick="return confirm( 'Confirmar' )">Eliminar</a>
+							<?= lang( 'App.general.accion.editar' ) ?>
+
+						</a>
+
+						<a href="<?= base_url( '/libros/eliminar/' . $libro->id ) ?>" onclick="return confirm( '<?= lang( 'App.general.accion.confirmar' ) ?>' )">
+						
+							<?= lang( 'App.general.accion.eliminar' ) ?>
+
+						</a>
 
 					</td>
 
@@ -73,7 +81,12 @@
 
 			<tr>
 
-				<td colspan="4">Listado de libros</td>
+				<td colspan="4">
+
+					<?= lang( 'App.general.listado', [ count( $libros ) ] ) ?>
+					<?= lang( 'App.libro.nombre', [ count( $libros ) ] ) ?>
+
+				</td>
 
 			</tr>
 

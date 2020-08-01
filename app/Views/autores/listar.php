@@ -5,13 +5,17 @@
 	<!-- Encabezados -->
 	<header>
 	
-		<h2>Autores</h2>
-		<h3>Listado</h3>
+		<h2><?= lang( 'App.autor.titulo', [ count( $autores ) ] ) ?></h2>
+		<h3><?= lang( 'App.general.listado', [ count( $autores ) ] ) ?></h3>
 
 	</header>
 	<!-- /Encabezados -->
 
-	<a href="<?= base_url( 'autores/agregarEditar' ) ?>">Agregar</a>
+	<a href="<?= base_url( 'autores/agregarEditar' ) ?>">
+
+		<?= lang( 'App.general.accion.agregar' ) ?>
+		
+	</a>
 
 	<!-- Tabla -->
 	<table border="1">
@@ -21,13 +25,10 @@
 
 			<tr>
 
-				<th>Nombre</th>
-				
-				<th>Nacionalidad</th>
-				
-				<th>Género</th>
-				
-				<th>Acciones</th>
+				<th><?= lang( 'App.autor.nombre' ) ?></th>
+				<th><?= lang( 'App.autor.nacionalidad' ) ?></th>
+				<th><?= lang( 'App.autor.genero.nombre' ) ?></th>
+				<th><?= lang( 'App.general.accion.nombre' ) ?></th>
 
 			</tr>
 
@@ -54,9 +55,17 @@
 					<!-- Acciones -->
 					<td>
 
-						<a href="<?= base_url( 'autores/agregarEditar/' . $autor->id ) ?>">Editar</a>
+						<a href="<?= base_url( '/autores/agregarEditar/' . $autor->id ) ?>">
 
-						<a href="<?= base_url( 'autores/eliminar/' . $autor->id ) ?>" onclick="return confirm( 'Confirmar' )">Eliminar</a>
+							<?= lang( 'App.general.accion.editar' ) ?>
+
+						</a>
+
+						<a href="<?= base_url( '/autores/eliminar/' . $autor->id ) ?>" onclick="return confirm( '<?= lang( 'App.general.accion.confirmar' ) ?>' )">
+
+							<?= lang( 'App.general.accion.eliminar' ) ?>
+
+						</a>
 					
 					</td>
 
@@ -72,7 +81,12 @@
 
 			<tr>
 
-				<td colspan="4">Listado de autores</td>
+				<td colspan="4">
+
+					<?= lang( 'App.general.listado', [ count( $autores ) ] ) ?>
+					<?= lang( 'App.autor.titulo', [ count( $autores ) ] ) ?>
+					
+				</td>
 			
 			</tr>
 
