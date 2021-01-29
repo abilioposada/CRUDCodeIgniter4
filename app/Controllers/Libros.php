@@ -11,14 +11,10 @@ use App\Models\ModeloAutor;
  */
 class Libros extends BaseController
 {
-	/**
-	 * @var ModeloLibro
-	 */
-	private $modeloLibro;
+	/** @var ModeloLibro */
+	private ModeloLibro $modeloLibro;
 
-	/**
-	 * Constructor clase controlador libros
-	 */
+	/** Constructor clase controlador libros */
 	public function __construct ()
 	{
 		$this->modeloLibro = new ModeloLibro; # Instancia
@@ -70,9 +66,7 @@ class Libros extends BaseController
 		] );
 	}
 
-	/**
-	 * Acción guardar
-	 */
+	/** Acción guardar */
 	public function guardar ()
 	{
 		# Si guardó
